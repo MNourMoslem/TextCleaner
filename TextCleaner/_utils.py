@@ -36,8 +36,8 @@ def _remove_non_alphanumerics(text : str, sub_with : str = "") -> str:
 def _remove_emails(text : str, sub_with : str = "") -> str:
   return regex.sub("\w+@\w+\.\w+", sub_with, text)
 
-def _remove_wide_spaces(text : str, replce_with : str = " ", min_len = 2) -> str:
-  return regex.sub("\s{%d,}" % min_len, replce_with, text)
+def _remove_wide_spaces(text : str, sub_with : str = " ", min_len = 2) -> str:
+  return regex.sub("\s{%d,}" % min_len, sub_with, text)
 
 def _remove_urls(text : str, sub_with : str = "") -> str:
   return regex.sub(r"(?:https://)?(?:www\.)?\w+\.\w+(?:\.\w+)?", sub_with, text)
