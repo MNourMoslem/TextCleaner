@@ -1,5 +1,7 @@
 from . import _utils
 
+STOP_WORDS = _utils.STOP_WORDS
+
 def remove_numbers(text: str, sub_with: str = "") -> str:
     return _utils._remove_numbers(text=text, sub_with=sub_with)
 
