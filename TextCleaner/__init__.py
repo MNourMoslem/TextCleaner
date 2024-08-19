@@ -11,8 +11,8 @@ def remove_non_alphanumerics(text: str, sub_with: str = "") -> str:
 def remove_emails(text: str, sub_with: str = "") -> str:
     return _utils._remove_emails(text=text, sub_with=sub_with)
 
-def remove_wide_spaces(text: str, replace_with: str = " ", min_len: int = 2) -> str:
-    return _utils._remove_wide_spaces(text=text, replace_with=replace_with, min_len=min_len)
+def remove_wide_spaces(text: str, sub_with: str = " ", min_len: int = 2) -> str:
+    return _utils._remove_wide_spaces(text=text, sub_with=sub_with, min_len=min_len)
 
 def remove_urls(text: str, sub_with: str = "") -> str:
     return _utils._remove_urls(text=text, sub_with=sub_with)
