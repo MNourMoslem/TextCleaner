@@ -79,7 +79,7 @@ def _get_charcount(text : str)-> int:
   return len(regex.findall("[^\s]", text.strip()))
 
 def _get_avgwordlength(text : str) -> float:
-  return get_charcount(text) / get_wordcount(text)
+  return _get_charcount(text) / _get_wordcount(text)
 
 def _get_stopwordscount(text : str) -> int:
   return len(regex.findall(r"\b(?:{})\b".format("|".join(STOP_WORDS)), text))
