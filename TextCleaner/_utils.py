@@ -40,7 +40,7 @@ def _remove_wide_spaces(text : str, sub_with : str = " ", min_len = 2) -> str:
   return regex.sub("\s{%d,}" % min_len, sub_with, text)
 
 def _remove_urls(text : str, sub_with : str = "") -> str:
-  return regex.sub(r"(?:https://)?(?:www\.)?\w+\.\w+(?:\.\w+)?", sub_with, text)
+  return regex.sub(r"(?:https://|www)+[^\s]+\.[^\s]+", sub_with, text)
 
 def _remove_tags(text : str, sub_with : str = "") -> str:
   return regex.sub("@[^\s]+", sub_with, text)
@@ -64,7 +64,7 @@ def _get_emails(text : str) -> list:
   return regex.findall("\w+@\w+\.\w+", text)
 
 def _get_urls(text : str) -> list:
-  return regex.findall(r"(?:https://)?(?:www\.)?\w+\.\w+(?:\.\w+)??", text)
+  return regex.findall(r"(?:https://|www)+[^\s]+\.[^\s]+", text)
 
 def _get_tags(text : str) -> list:
   return regex.findall("@[^\s]+", text)
